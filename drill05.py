@@ -14,11 +14,11 @@ def load_resources():
 
 
 def reset_world():
-    global running, x, y, frame
+    global running, cx, cy, frame
     global hx, hy
 
     running = True
-    x, y = TUK_WIDTH // 2, TUK_HEIGHT // 2
+    cx, cy = TUK_WIDTH // 2, TUK_HEIGHT // 2
     frame = 0
 
     # hx, hy = TUK_WIDTH - 50, TUK_HEIGHT - 50
@@ -29,7 +29,7 @@ def render_world():
     clear_canvas()
     TUK_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
     arrow.draw(hx, hy)
-    character.clip_draw(frame * 100, 100 * 1, 100, 100, x, y)
+    character.clip_draw(frame * 100, 100 * 1, 100, 100, cx, cy)
     update_canvas()
 
 
